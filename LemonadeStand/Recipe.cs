@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Day
+    class Recipe
     {
-        //member variables
-
-        //constructor
-
-        //methods
     }
 }

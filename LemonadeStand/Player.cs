@@ -8,5 +8,13 @@ namespace LemonadeStand
 {
     class Player
     {
+        //member variables
+        int startingClams = 20;
+        
+
+        //constructor
+
+        //methods
+        
     }
 }
