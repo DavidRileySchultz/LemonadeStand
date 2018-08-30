@@ -25,12 +25,30 @@ namespace LemonadeStand
             Console.WriteLine("Number of Ice Cubes per pitcher = " + iceCubesPerPitcher);
         }
 
+        public void PromptChangeRecipe()
+        {
+            Console.WriteLine("Would you like to change your recipe?\n(1) Yes\n(2) No");
+            switch(Console.ReadLine())
+            {
+                case "1":
+                    ChangeRecipe();
+                    break;
+                case "2":
+                    //PlayGame();
+                    break;
+                default:
+                    Console.WriteLine("Please enter valid input, try again...");
+                    break;
+
+            }
+        }
         public void ChangeRecipe()
         {
+            DisplayCurrentRecipe();
             ChangeLemonAmount();
             ChangeSugarAmount();
             ChangeIceAmount();
-
+            DisplayCurrentRecipe();
         }
 
         public void ChangeLemonAmount()

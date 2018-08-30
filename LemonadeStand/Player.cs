@@ -17,6 +17,8 @@ namespace LemonadeStand
         {
             inventory = new Inventory();
             recipe = new Recipe();
+            
+       
 
         }
 

@@ -9,9 +9,12 @@ namespace LemonadeStand
     class Day
     {
         //member variables
-
+        public Weather weather;
         //constructor
-
+        public Day()
+        {
+            weather = new Weather();
+        }
         //methods
     }
 }

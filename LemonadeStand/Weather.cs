@@ -17,14 +17,14 @@ namespace LemonadeStand
         //constructor
 
         //methods
-        public void GetTemperature()
+        public void SetTemperature()
         {
             Random randomTemperature = new Random();
             temperature = randomTemperature.Next(minTemperature, maxTemperature);
            
         }
 
-        public void GetWeatherConditions()
+        public void SetWeatherConditions()
         {
             Random randomWeatherCondition = new Random();
             int number = randomWeatherCondition.Next(1, 8);

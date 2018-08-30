@@ -29,11 +29,11 @@ namespace LemonadeStand
 
         public void DisplayInventoryStatus()
         {
-            Console.WriteLine("Cash =" + cashWallet);
-            Console.WriteLine("Cups =" + cupInventory);
-            Console.WriteLine("Sugar =" + sugarInventory);
-            Console.WriteLine("Lemons =" + lemonInventory);
-            Console.WriteLine("Ice Cubes =" + iceInventory);
+            Console.WriteLine("Cash = " + cashWallet);
+            Console.WriteLine("Cups = " + cupInventory);
+            Console.WriteLine("Sugar = " + sugarInventory);
+            Console.WriteLine("Lemons = " + lemonInventory);
+            Console.WriteLine("Ice Cubes = " + iceInventory);
         }
     }
 }
