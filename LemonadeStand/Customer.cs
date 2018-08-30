@@ -10,7 +10,7 @@ namespace LemonadeStand
         //different type of customers
         //ability to purchase a cup of lemonade
         //effected by weather conditions
-        //
+        //<list> of customers
     {
 
         //member variable

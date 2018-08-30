@@ -9,10 +9,16 @@ namespace LemonadeStand
     class Player
     {
         //member variables
-        int startingClams = 20;
-        
+        public Inventory inventory;
+        public Recipe recipe;
 
         //constructor
+        public Player()
+        {
+            inventory = new Inventory();
+            recipe = new Recipe();
+
+        }
 
         //methods
         

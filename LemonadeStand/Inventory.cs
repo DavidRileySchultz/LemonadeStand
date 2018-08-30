@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Inventory
+    public class Inventory
     {
         //member variables
         public int cupInventory;
@@ -16,16 +16,16 @@ namespace LemonadeStand
         public double cashWallet;
         //making these variables public to update inventory from store
         //constructor
-
-        //methods
-        public void Inventory()
+        public Inventory()
         {
             cashWallet = 20;
             cupInventory = 0;
             sugarInventory = 0;
             lemonInventory = 0;
-            iceInventory = 0;
+            iceInventory = 0;           
         }
+        //methods
+
 
         public void DisplayInventoryStatus()
         {
