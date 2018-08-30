@@ -9,22 +9,14 @@ namespace LemonadeStand
     class Weather
     {
         //member variables
-        const int totalDays = 7;
-        //const int minTemperature = 55;
-        //const int maxTemperature = 95;
+        
         public string weatherCondition;
         public int temperature;
         //constructor
 
         //methods
-        /*public void SetTemperature()
-        {
-            Random randomTemperature = new Random();
-            temperature = randomTemperature.Next(minTemperature, maxTemperature);
-           
-        }*/
-
-        public void SetWeatherConditions()
+        
+        public void GetWeatherConditions()
         {
             Random randomTemperature = new Random();
             Random randomWeatherCondition = new Random();
@@ -60,12 +52,12 @@ namespace LemonadeStand
                     weatherCondition = "Hazey";
                     temperature = randomTemperature.Next(80, 93);
                     break;
-
-
-
             }
-
         }
 
+        public void GetWeatherForecast()
+        {
+
+        }
     }
 }

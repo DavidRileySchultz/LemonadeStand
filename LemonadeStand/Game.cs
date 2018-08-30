@@ -14,7 +14,7 @@ namespace LemonadeStand
         Player player;
         Store store;
         public List<Day> days;
-        public int numberOfDaysInGame;
+        public int numberOfDaysInGame = 7;
 
         //constructor
         public Game()
@@ -23,7 +23,14 @@ namespace LemonadeStand
             player = new Player();
             store = new Store();
             weather = new Weather();
+            days = new List<Day>();
             
+            numberOfDaysInGame = 7;
+            for (int i = 0; i < numberOfDaysInGame; i++)
+            {
+                days.Add(new Day());
+            }
+
         }
         //methods
         public void ShowRules()
@@ -31,16 +38,16 @@ namespace LemonadeStand
             Console.WriteLine(rules);
         }
 
-        public void GetTodaysWeather()
+        public void SetTodaysWeather()
         {
             //weather.SetTemperature();
-            weather.SetWeatherConditions();
+            weather.GetWeatherConditions();
             Console.WriteLine("Today's weather is: " + weather.temperature + "°F and " + weather.weatherCondition + ".");
 
         }
         public void RunDay()
         {
-            GetTodaysWeather();
+            SetTodaysWeather();
             player.inventory.DisplayInventoryStatus();
             store.ReplenishInventory(player);
             player.recipe.PromptChangeRecipe();
@@ -53,6 +60,7 @@ namespace LemonadeStand
             //do set up stuff
             for(int i = 0; i < numberOfDaysInGame; i++)
             {
+                Console.WriteLine("It is day: " + (i+1));
                 RunDay();
             }
             //do end game stuff
