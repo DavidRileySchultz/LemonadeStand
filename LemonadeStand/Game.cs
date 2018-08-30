@@ -33,9 +33,9 @@ namespace LemonadeStand
 
         public void GetTodaysWeather()
         {
-            weather.SetTemperature();
+            //weather.SetTemperature();
             weather.SetWeatherConditions();
-            Console.WriteLine("Today's weather is:" + " " + weather.temperature + "°F and" + weather.weatherCondition + ".");
+            Console.WriteLine("Today's weather is: " + weather.temperature + "°F and " + weather.weatherCondition + ".");
 
         }
         public void RunDay()

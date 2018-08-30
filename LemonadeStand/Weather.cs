@@ -10,41 +10,57 @@ namespace LemonadeStand
     {
         //member variables
         const int totalDays = 7;
-        const int minTemperature = 55;
-        const int maxTemperature = 95;
+        //const int minTemperature = 55;
+        //const int maxTemperature = 95;
         public string weatherCondition;
         public int temperature;
         //constructor
 
         //methods
-        public void SetTemperature()
+        /*public void SetTemperature()
         {
             Random randomTemperature = new Random();
             temperature = randomTemperature.Next(minTemperature, maxTemperature);
            
-        }
+        }*/
 
         public void SetWeatherConditions()
         {
+            Random randomTemperature = new Random();
             Random randomWeatherCondition = new Random();
-            int number = randomWeatherCondition.Next(1, 8);
+            int number = randomWeatherCondition.Next(1, 7);
             switch (number)
             {
                 case 1:
                     weatherCondition = "Sunny";
+                    temperature = randomTemperature.Next(75, 91);
                     break;
 
                 case 2:
                     weatherCondition = "Cloudy";
+                    temperature = randomTemperature.Next(65, 78);
                     break;
 
                 case 3:
                     weatherCondition = "Rainy";
+                    temperature = randomTemperature.Next(65, 78);
                     break;
 
                 case 4:
-                    weatherCondition = "Partly Cloudy";
+                    weatherCondition = "Cool";
+                    temperature = randomTemperature.Next(55, 66);
                     break;
+
+                case 5:
+                    weatherCondition = "HOT!!";
+                    temperature = randomTemperature.Next(89,99);
+                    break;
+
+                case 6:
+                    weatherCondition = "Hazey";
+                    temperature = randomTemperature.Next(80, 93);
+                    break;
+
 
 
             }
