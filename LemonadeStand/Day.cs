@@ -12,9 +12,9 @@ namespace LemonadeStand
         public Weather weather;
         //public Customer customer;
         //constructor
-        public Day()
+        public Day(Random rnd)
         {
-            weather = new Weather();
+            weather = new Weather(rnd);
         }
         //methods
         

@@ -13,73 +13,74 @@ namespace LemonadeStand
         public string actualCondition;
         public string forecastedCondition;
         int randomCondition;
-        public Weather()
+        public Weather(Random rnd)
         {
-            SetAllTheWeatherStuff();
-            DisplayWeather();
-        }
-
-        public void SetAllTheWeatherStuff()
-        {
-            SetForecastedWeather();
-            SetActualWeather();
+            SetAllTheWeatherStuff(rnd);
             
         }
-        public void DisplayWeather()
+
+        public void SetAllTheWeatherStuff(Random rnd)
+        {
+            SetForecastedWeather(rnd);
+            SetActualWeather(rnd);
+            
+        }
+        public void DisplayActualWeather()
         {
             Console.WriteLine("Today's weather is: " + actualTemperature + "°F and " + actualCondition + ".");
+        }
+
+        public void DisplayForecast()
+        {
             Console.WriteLine("Tomorrow's forecasted weather is: " + forecastedTemperature + "°F and " + forecastedCondition + ".");
         }
 
-        public void SetForecastedWeather()
+        public void SetForecastedWeather(Random rnd)
         {
-            Random randomTemperature = new Random();
-            Random randomWeatherCondition = new Random();
-            randomCondition = randomWeatherCondition.Next(1, 5);
+            randomCondition = rnd.Next(1, 5);
             switch (randomCondition)
             {
                 case 1:
                     forecastedCondition = "Sunny";
-                    forecastedTemperature = randomTemperature.Next(75, 91);
+                    forecastedTemperature = rnd.Next(75, 91);
                     break;
 
                 case 2:
                     forecastedCondition = "Cloudy";
-                    forecastedTemperature = randomTemperature.Next(75, 85);
+                    forecastedTemperature = rnd.Next(75, 85);
                     break;
 
                 case 3:
                     forecastedCondition = "Rainy";
-                    forecastedTemperature = randomTemperature.Next(65, 78);
+                    forecastedTemperature = rnd.Next(65, 78);
                     break;
 
                 case 4:
                     forecastedCondition = "Cool";
-                    forecastedTemperature = randomTemperature.Next(55, 66);
+                    forecastedTemperature = rnd.Next(55, 66);
                     break;
             }
         }
 
-        public void SetActualWeather()
+        public void SetActualWeather(Random rnd)
         {
             if (randomCondition == 1)
             {
-                Random randomTemperature = new Random();
-                Random randomWeatherCondition = new Random();
-                randomCondition = randomWeatherCondition.Next(1, 4);
+                
+                randomCondition = rnd.Next(1, 4);
                 switch (randomCondition)
                 {
                     case 1:
                         actualCondition = "Sunny";
-                        actualTemperature = randomTemperature.Next(75, 91);
+                        actualTemperature = rnd.Next(75, 91);
                         break;
                     case 2:
                         actualCondition = "Cloudy";
-                        actualTemperature = randomTemperature.Next(75, 91);
+                        actualTemperature = rnd.Next(75, 91);
                         break;
                     case 3:
                         actualCondition = "Rainy";
-                        actualTemperature = randomTemperature.Next(75, 91);
+                        actualTemperature = rnd.Next(75, 91);
                         break;
                 }
 
@@ -87,66 +88,63 @@ namespace LemonadeStand
 
             else if (randomCondition == 2)
             {
-                Random randomTemperature = new Random();
-                Random randomWeatherCondition = new Random();
-                randomCondition = randomWeatherCondition.Next(1, 4);
+                
+                randomCondition = rnd.Next(1, 4);
                 switch (randomCondition)
                 {
                     case 1:
                         actualCondition = "Cloudy";
-                        actualTemperature = randomTemperature.Next(75, 85);
+                        actualTemperature = rnd.Next(75, 85);
                         break;
                     case 2:
                         actualCondition = "Rainy";
-                        actualTemperature = randomTemperature.Next(75, 85);
+                        actualTemperature = rnd.Next(75, 85);
                         break;
                     case 3:
                         actualCondition = "Cool";
-                        actualTemperature = randomTemperature.Next(57, 70);
+                        actualTemperature = rnd.Next(57, 70);
                         break;
                 }
             }
 
             else if (randomCondition == 3)
             {
-                Random randomTemperature = new Random();
-                Random randomWeatherCondition = new Random();
-                randomCondition = randomWeatherCondition.Next(1, 4);
+
+                randomCondition = rnd.Next(1, 4);
                 switch (randomCondition)
                 {
                     case 1:
                         actualCondition = "Rainy";
-                        actualTemperature = randomTemperature.Next(75, 91);
+                        actualTemperature = rnd.Next(75, 91);
                         break;
                     case 2:
                         actualCondition = "Sunny";
-                        actualTemperature = randomTemperature.Next(75, 91);
+                        actualTemperature = rnd.Next(75, 91);
                         break;
                     case 3:
                         actualCondition = "Cloudy";
-                        actualTemperature = randomTemperature.Next(75, 91);
+                        actualTemperature = rnd.Next(75, 91);
                         break;
                 }
             }
 
             else if (randomCondition == 4)
             {
-                Random randomTemperature = new Random();
-                Random randomWeatherCondition = new Random();
-                randomCondition = randomWeatherCondition.Next(1, 4);
+                
+                randomCondition = rnd.Next(1, 4);
                 switch (randomCondition)
                 {
                     case 1:
                         actualCondition = "Cool";
-                        actualTemperature = randomTemperature.Next(55, 67);
+                        actualTemperature = rnd.Next(55, 67);
                         break;
                     case 2:
                         actualCondition = "Cloudy";
-                        actualTemperature = randomTemperature.Next(55, 67);
+                        actualTemperature = rnd.Next(55, 67);
                         break;
                     case 3:
                         actualCondition = "Rainy";
-                        actualTemperature = randomTemperature.Next(55, 67);
+                        actualTemperature = rnd.Next(55, 67);
                         break;
                 }
             }
