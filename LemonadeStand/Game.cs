@@ -10,7 +10,6 @@ namespace LemonadeStand
     {
         //member variables
         string rules;
-        Weather weather;
         Player player;
         Store store;
         public List<Day> days;
@@ -22,13 +21,13 @@ namespace LemonadeStand
             rules = "The goal is to make as much money as you can in 7 Days.\nBuy cups, lemons, sugar, and ice cubes; then set your recipe based on the weather and conditions.\nStart with the basic recipe and see if you can do bestter.\nLastly, set your price and sell your lemonade at the stand, try changing the price based on the weather conditions as well.\nSee how much money you can make at the end of 7 days!!";
             player = new Player();
             store = new Store();
-            weather = new Weather();
             days = new List<Day>();
             
             numberOfDaysInGame = 7;
             for (int i = 0; i < numberOfDaysInGame; i++)
             {
                 days.Add(new Day());
+           
             }
 
         }
@@ -38,19 +37,13 @@ namespace LemonadeStand
             Console.WriteLine(rules);
         }
 
-        public void SetTodaysWeather()
-        {
-            //weather.SetTemperature();
-            weather.GetWeatherConditions();
-            Console.WriteLine("Today's weather is: " + weather.temperature + "°F and " + weather.weatherCondition + ".");
-
-        }
+ 
         public void RunDay()
         {
-            SetTodaysWeather();
+            
             player.inventory.DisplayInventoryStatus();
             store.ReplenishInventory(player);
-            player.recipe.PromptChangeRecipe();
+            player.recipe.PromptToChangeRecipe();
             //Sell lemonade
         }
 

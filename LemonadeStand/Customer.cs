@@ -14,10 +14,21 @@ namespace LemonadeStand
     {
 
         //member variable
-
+        int temperaturePreference;
+        string conditionPreference;
+        double pricePreference;
+        int chanceToBuy;
         //constructor
+        public Customer()
+        {
+
+        }
 
         //methods
+        public void SetTemperaturePreference()
+        {
+
+        }
 
     }
 }

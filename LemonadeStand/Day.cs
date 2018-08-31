@@ -17,5 +17,8 @@ namespace LemonadeStand
             weather = new Weather();
         }
         //methods
+        
+           
+        
     }
 }

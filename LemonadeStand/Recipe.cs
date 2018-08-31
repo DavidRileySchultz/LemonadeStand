@@ -25,7 +25,7 @@ namespace LemonadeStand
             Console.WriteLine("Number of Ice Cubes per pitcher = " + iceCubesPerPitcher);
         }
 
-        public void PromptChangeRecipe()
+        public void PromptToChangeRecipe()
         {
             Console.WriteLine("Would you like to change your recipe?\n(1) Yes\n(2) No");
             switch(Console.ReadLine())
@@ -34,10 +34,10 @@ namespace LemonadeStand
                     ChangeRecipe();
                     break;
                 case "2":
-                    //PlayGame();
                     break;
                 default:
                     Console.WriteLine("Please enter valid input, try again...");
+                    PromptToChangeRecipe();
                     break;
 
             }
@@ -102,7 +102,7 @@ namespace LemonadeStand
 
         public void ChangeIceAmount()
         {
-            Console.WriteLine("How many Ice Cubes do you want to use per pitcher?\n(1) 2 Ice Cubes per pitcher\n(2) 4 Ice Cubes per pitcher\n(3) 6 Ice Cubes per pitcher\n(4) Exit back to the Change Recipe menu.");
+            Console.WriteLine("How many Ice Cubes do you want to use per pitcher?\n(1) 20 Ice Cubes per pitcher\n(2) 40 Ice Cubes per pitcher\n(3) 60 Ice Cubes per pitcher\n(4) Exit back to the Change Recipe menu.");
             switch(Console.ReadLine())
             {
                 case "1":
