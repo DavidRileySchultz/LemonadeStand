@@ -12,7 +12,7 @@ namespace LemonadeStand
         public int forecastedTemperature;
         public string actualCondition;
         public string forecastedCondition;
-        int randomCondition;
+        public int randomCondition;
         public Weather(Random rnd)
         {
             SetAllTheWeatherStuff(rnd);
@@ -56,7 +56,7 @@ namespace LemonadeStand
                     break;
 
                 case 4:
-                    forecastedCondition = "Cool";
+                    forecastedCondition = "Overcast";
                     forecastedTemperature = rnd.Next(55, 66);
                     break;
             }
@@ -101,7 +101,7 @@ namespace LemonadeStand
                         actualTemperature = rnd.Next(75, 85);
                         break;
                     case 3:
-                        actualCondition = "Cool";
+                        actualCondition = "Overcast";
                         actualTemperature = rnd.Next(57, 70);
                         break;
                 }
@@ -135,7 +135,7 @@ namespace LemonadeStand
                 switch (randomCondition)
                 {
                     case 1:
-                        actualCondition = "Cool";
+                        actualCondition = "Overcast";
                         actualTemperature = rnd.Next(55, 67);
                         break;
                     case 2:

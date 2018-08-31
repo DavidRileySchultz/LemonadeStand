@@ -51,6 +51,7 @@ namespace LemonadeStand
             player.inventory.DisplayInventoryStatus();
             store.ReplenishInventory(player);
             player.recipe.PromptToChangeRecipe();
+            player.SetPricePerCup();
             //Sell lemonade
         }
 

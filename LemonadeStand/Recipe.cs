@@ -12,7 +12,7 @@ namespace LemonadeStand
         public int cupsPerPitcher = 10;
         public int lemonsPerPitcher = 4;
         public int cupsOfSugarPerPitcher = 4;
-        public int iceCubesPerPitcher = 40;
+        public int iceCubesPerCup = 4;
 
         //constructor
 
@@ -22,7 +22,7 @@ namespace LemonadeStand
             Console.WriteLine("Your current recipe is:");
             Console.WriteLine("Number of Lemons per pitcher = " + lemonsPerPitcher);
             Console.WriteLine("Cups of Sugar per pitcher = " + cupsOfSugarPerPitcher);
-            Console.WriteLine("Number of Ice Cubes per pitcher = " + iceCubesPerPitcher);
+            Console.WriteLine("Number of Ice Cubes per cup = " + iceCubesPerCup);
         }
 
         public void PromptToChangeRecipe()
@@ -102,17 +102,17 @@ namespace LemonadeStand
 
         public void ChangeIceAmount()
         {
-            Console.WriteLine("How many Ice Cubes do you want to use per pitcher?\n(1) 20 Ice Cubes per pitcher\n(2) 40 Ice Cubes per pitcher\n(3) 60 Ice Cubes per pitcher\n(4) Exit back to the Change Recipe menu.");
+            Console.WriteLine("How many Ice Cubes do you want to use per cup?\n(1) 2 Ice Cubes per pitcher\n(2) 4 Ice Cubes per pitcher\n(3) 6 Ice Cubes per pitcher\n(4) Exit back to the Change Recipe menu.");
             switch(Console.ReadLine())
             {
                 case "1":
-                    iceCubesPerPitcher = 20;
+                    iceCubesPerCup = 2;
                     break;
                 case "2":
-                    iceCubesPerPitcher = 40;
+                    iceCubesPerCup = 4;
                     break;
                 case "3":
-                    iceCubesPerPitcher = 60;
+                    iceCubesPerCup = 6;
                     break;
                 case "4":
                     ChangeRecipe();

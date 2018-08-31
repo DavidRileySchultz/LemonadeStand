@@ -15,9 +15,9 @@ namespace LemonadeStand
 
         //member variable
         int temperaturePreference;
-        string conditionPreference;
+        int conditionPreference;
         double pricePreference;
-        int chanceToBuy;
+        bool buyCup;
         //constructor
         public Customer()
         {
@@ -30,5 +30,28 @@ namespace LemonadeStand
 
         }
 
+        public void SetConditionPreference()
+        {
+
+        }
+
+        public void SetPricePreference()
+        {
+
+        }
+
+        public void SetChanceToBuy(Player player, Weather weather)
+        {
+            if(player.pricePerCup <= pricePreference && conditionPreference >= weather.randomCondition && temperaturePreference >= weather.actualTemperature)
+            {
+                buyCup = true;
+                player.inventory.cashWallet += player.pricePerCup;
+
+            }
+            else
+            {
+                buyCup = false;
+            }
+        }
     }
 }
