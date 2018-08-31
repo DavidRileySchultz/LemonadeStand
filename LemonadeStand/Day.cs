@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
         //member variables
         public Weather weather;
-        //public Customer customer;
+        public Customer customer;
         //constructor
         public Day(Random rnd)
         {

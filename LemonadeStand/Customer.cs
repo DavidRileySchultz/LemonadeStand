@@ -25,19 +25,19 @@ namespace LemonadeStand
         }
 
         //methods
-        public void SetTemperaturePreference()
+        public void SetTemperaturePreference(Random rnd)
         {
-
+            temperaturePreference = rnd.Next(57, 91);
         }
 
-        public void SetConditionPreference()
+        public void SetConditionPreference(Random rnd)
         {
-
+            conditionPreference = rnd.Next(1, 5);
         }
 
-        public void SetPricePreference()
+        public void SetPricePreference(Random rnd)
         {
-
+            pricePreference = rnd.NextDouble();
         }
 
         public void SetChanceToBuy(Player player, Weather weather)

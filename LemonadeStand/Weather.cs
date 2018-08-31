@@ -136,15 +136,15 @@ namespace LemonadeStand
                 {
                     case 1:
                         actualCondition = "Overcast";
-                        actualTemperature = rnd.Next(55, 67);
+                        actualTemperature = rnd.Next(57, 67);
                         break;
                     case 2:
                         actualCondition = "Cloudy";
-                        actualTemperature = rnd.Next(55, 67);
+                        actualTemperature = rnd.Next(57, 67);
                         break;
                     case 3:
                         actualCondition = "Rainy";
-                        actualTemperature = rnd.Next(55, 67);
+                        actualTemperature = rnd.Next(57, 67);
                         break;
                 }
             }

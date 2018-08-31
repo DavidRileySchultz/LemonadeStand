@@ -12,6 +12,7 @@ namespace LemonadeStand
         public Inventory inventory;
         public Recipe recipe;
         public double pricePerCup = .20;
+        int cupsSold;
         //constructor
         public Player()
         {
@@ -33,7 +34,18 @@ namespace LemonadeStand
         {
             if(recipe.cupsPerPitcher >= 0 && inventory.cupInventory != 0 && recipe.iceCubesPerCup > inventory.iceInventory)
             {
+                recipe.cupsPerPitcher -= 1;
+                inventory.cupInventory -= 1;
+                inventory.iceInventory -= recipe.iceCubesPerCup;
+                inventory.cashWallet += pricePerCup;
+                cupsSold++;
 
+            }
+            else
+            {
+                //make method to check if enough ingredients to make another pitcher
+                //make method to refil pitcher
+                //end day if not enough in inventory to refil pitcher
             }
         }
     }
