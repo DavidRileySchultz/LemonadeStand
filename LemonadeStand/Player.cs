@@ -11,8 +11,6 @@ namespace LemonadeStand
         //member variables
         public Inventory inventory;
         public Recipe recipe;
-        Player player;
-        Day day;
         public double pricePerCup = .20;
         public int cupsSold;
         //constructor
@@ -56,12 +54,12 @@ namespace LemonadeStand
             }
             else
             {
-                CheckForPitcherRefill(player);
+                CheckForPitcherRefill();
                 //RefillPitcher();
             }
         }
 
-        public void CheckForPitcherRefill(Player player)
+        public void CheckForPitcherRefill()
         {
             if(inventory.lemonInventory < recipe.lemonsPerPitcher || inventory.sugarInventory < recipe.cupsOfSugarPerPitcher)
             {

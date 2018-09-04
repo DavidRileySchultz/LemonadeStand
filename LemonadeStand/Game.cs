@@ -13,7 +13,6 @@ namespace LemonadeStand
         Player player;
         Store store;
         Random rnd;
-        Weather weather;
         public List<Day> days;
         public int numberOfDaysInGame = 7;
 
