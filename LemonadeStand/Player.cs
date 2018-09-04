@@ -59,7 +59,7 @@ namespace LemonadeStand
             if(inventory.lemonInventory < recipe.lemonsPerPitcher || inventory.sugarInventory < recipe.cupsOfSugarPerPitcher)
             {
                 Console.WriteLine("Not enough inventory to make another pitcher! You are sold out for the day... Better planning next time!\n");
-                
+                //this is one of my methods that fulfills the single responsibility principle, all it is designed to do is check inventory to see if there is available inventory to make a new pitcher.
             }
 
         }
@@ -70,6 +70,7 @@ namespace LemonadeStand
             inventory.lemonInventory -= recipe.lemonsPerPitcher;
             recipe.cupsLeftInPitcher = 10;
             Console.WriteLine("Your Pitcher has been refilled! Go sell some more Lemonade to those thirsty customers!\n");
+            //This is another method that fulfills the single responsibility principle, all it is designed to do is replenish the pitcher to sell more lemonade.
         }
     }
 }
