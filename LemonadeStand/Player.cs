@@ -47,19 +47,24 @@ namespace LemonadeStand
         {
             if(recipe.cupsLeftInPitcher > 0 && inventory.cupInventory != 0 && inventory.iceInventory >= 4)
             {
-                Console.WriteLine("Congratulations!!!, you've sold a cup of lemonade!");
                 recipe.cupsLeftInPitcher -= 1;
                 inventory.cupInventory -= 1;
                 inventory.iceInventory -= recipe.iceCubesPerCup;
                 inventory.cashWallet += pricePerCup;
                 cupsSold++;
-
+                Console.WriteLine("Congratulations!!!, you've sold a cup of lemonade!");
             }
             else
             {
                 CheckForPitcherRefill(player);
                 RefillPitcher();
-                
+                recipe.cupsLeftInPitcher -= 1;
+                inventory.cupInventory -= 1;
+                inventory.iceInventory -= recipe.iceCubesPerCup;
+                inventory.cashWallet += pricePerCup;
+                cupsSold++;
+                Console.WriteLine("Congratulations!!!, you've sold a cup of lemonade!");
+
             }
         }
 
