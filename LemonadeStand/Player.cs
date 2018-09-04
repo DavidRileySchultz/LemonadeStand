@@ -26,7 +26,7 @@ namespace LemonadeStand
         }
 
         //methods
-        public void SetPricePerCup()
+        public void SetPricePerCup()//this is another method that fulfills the single responsibility principle.
         {
             Console.WriteLine("Currently charging $" + pricePerCup  + " per cup.");
             Console.WriteLine("What would you like to charge per cup?\n");
@@ -57,14 +57,7 @@ namespace LemonadeStand
             else
             {
                 CheckForPitcherRefill(player);
-                RefillPitcher();
-                recipe.cupsLeftInPitcher -= 1;
-                inventory.cupInventory -= 1;
-                inventory.iceInventory -= recipe.iceCubesPerCup;
-                inventory.cashWallet += pricePerCup;
-                cupsSold++;
-                Console.WriteLine("Congratulations!!!, you've sold a cup of lemonade!");
-
+                //RefillPitcher();
             }
         }
 
@@ -75,6 +68,10 @@ namespace LemonadeStand
                 Console.WriteLine("Not enough inventory to make another pitcher! You are sold out for the day... Better planning next time!\n");
                 //this is one of my methods that fulfills the single responsibility principle, all it is designed to do is check inventory to see if there is available inventory to make a new pitcher.
             }
+            else
+            {
+                RefillPitcher();
+            }
         }
 
         public void RefillPitcher()
@@ -82,8 +79,13 @@ namespace LemonadeStand
             inventory.sugarInventory -= recipe.cupsOfSugarPerPitcher;
             inventory.lemonInventory -= recipe.lemonsPerPitcher;
             recipe.cupsLeftInPitcher = 10;
+            recipe.cupsLeftInPitcher -= 1;
+            inventory.cupInventory -= 1;
+            inventory.iceInventory -= recipe.iceCubesPerCup;
+            inventory.cashWallet += pricePerCup;
+            cupsSold++;
             Console.WriteLine("Your Pitcher has been refilled! Go sell some more Lemonade to those thirsty customers!\n");
-            //This is another method that fulfills the single responsibility principle, all it is designed to do is replenish the pitcher to sell more lemonade.
+            Console.WriteLine("Congratulations!!!, you've sold a cup of lemonade!");
         }
     }
 }

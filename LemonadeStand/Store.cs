@@ -100,7 +100,7 @@ namespace LemonadeStand
 
         public void BuyCupsOfSugar(Player player)
         {
-            Console.WriteLine("\nYou need to buy some Sugar?\n(1) 8 cups of Sugar = $0.60\n(2) 20 cups of Sugar = $1.55\n(3) 48 cups of Sugar = $3.40\n(4) Exit back to store");
+            Console.WriteLine("\nYou need to buy some Sugar?\n(1) 6 cups of Sugar = $0.60\n(2) 12 cups of Sugar = $1.55\n(3) 20 cups of Sugar = $3.40\n(4) Exit back to store");
             double price = 0;
             int amount = 0;
 
@@ -108,15 +108,15 @@ namespace LemonadeStand
             {
                 case "1":
                     price = 0.60;
-                    amount = 8;
+                    amount = 6;
                     break;
                 case "2":
                     price = 1.55;
-                    amount = 20;
+                    amount = 12;
                     break;
                 case "3":
                     price = 3.40;
-                    amount = 48;
+                    amount = 20;
                     break;
                 case "4":
                     ReplenishInventory(player);
@@ -144,7 +144,7 @@ namespace LemonadeStand
 
         public void BuyLemons(Player player)
         {
-            Console.WriteLine("\nSo, you need to buy some Lemons?\n(1) 10 Lemons = $0.69\n(2) 30 Lemons = $2.32\n(3) 75 Lemons = $4.31\n(4) Exit back to store");
+            Console.WriteLine("\nSo, you need to buy some Lemons?\n(1) 10 Lemons = $0.69\n(2) 15 Lemons = $2.32\n(3) 25 Lemons = $4.31\n(4) Exit back to store");
             double price = 0;
             int amount = 0;
 
@@ -156,11 +156,11 @@ namespace LemonadeStand
                     break;
                 case "2":
                     price = 2.32;
-                    amount = 30;
+                    amount = 15;
                     break;
                 case "3":
                     price = 4.31;
-                    amount = 75;
+                    amount = 25;
                     break;
                 case "4":
                     ReplenishInventory(player);
@@ -187,7 +187,7 @@ namespace LemonadeStand
 
         public void BuyIceCubes(Player player)
         {
-            Console.WriteLine("\nYou need to buy some Ice?\n(1) 100 Ice Cubes = $0.81\n(2) 250 Ice Cubes = $2.10\n(3) 500 Ice Cubes = $3.62\n(4) Exit back to store");
+            Console.WriteLine("\nYou need to buy some Ice?\n(1) 100 Ice Cubes = $0.81\n(2) 250 Ice Cubes = $2.10\n(3) 350 Ice Cubes = $3.62\n(4) Exit back to store");
             double price = 0;
             int amount = 0;
 
@@ -203,7 +203,7 @@ namespace LemonadeStand
                     break;
                 case "3":
                     price = 3.62;
-                    amount = 500;
+                    amount = 350;
                     break;
                 case "4":
                     ReplenishInventory(player);
