@@ -41,7 +41,7 @@ namespace LemonadeStand
             Console.WriteLine("The day has ended, let's see how many cups you sold and how much money you have!");
             Console.WriteLine("You managed to sell " + player.cupsSold + " cups of Lemonade today");
             Console.WriteLine("You managed to make $" + (player.cupsSold * player.pricePerCup) + ".");
-            Console.WriteLine("Your profit so far is $" + (player.inventory.cashWallet - 20) + ".");
+            Console.WriteLine("Your profits are $" + (Math.Round(player.inventory.cashWallet, 2) - 20) + ".");
             Console.WriteLine("You're ice left over from today has melted... Sorry, but this isn't Antarctica\n");
             player.inventory.iceInventory = 0;
             player.recipe.cupsLeftInPitcher = 0;

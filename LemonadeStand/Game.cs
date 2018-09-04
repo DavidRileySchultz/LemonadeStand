@@ -61,7 +61,7 @@ namespace LemonadeStand
 
         public void EndGame()
         {
-            Console.WriteLine("It's the end of the week. You're total for the week is $" + player.inventory.cashWallet + ".");
+            Console.WriteLine("It's the end of the week. You're total for the week is $" + Math.Round(player.inventory.cashWallet, 2) + ".");
             Console.WriteLine("Press any key to exit game. Hope you had fun! Try again to see if you can make more money!");
             Console.ReadLine();
         }

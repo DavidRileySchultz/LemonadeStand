@@ -54,8 +54,7 @@ namespace LemonadeStand
             }
             else
             {
-                CheckForPitcherRefill();
-                //RefillPitcher();
+                CheckForPitcherRefill();                
             }
         }
 
