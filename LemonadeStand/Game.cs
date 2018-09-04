@@ -54,7 +54,7 @@ namespace LemonadeStand
             store.ReplenishInventory(player);
             player.recipe.PromptToChangeRecipe();
             player.SetPricePerCup();
-            days[currentDay].CustomersPerDay(player);
+            days[currentDay].CustomersPerDay(player, currentDay);
             days[currentDay].EndOfDay(player);
         }
 
@@ -67,7 +67,6 @@ namespace LemonadeStand
         public void PlayGame()
         {
             ShowRules();
-            //do set up stuff
             for(int i = 0; i < numberOfDaysInGame; i++)
             {
                 Console.WriteLine("It is day: " + (i+1));

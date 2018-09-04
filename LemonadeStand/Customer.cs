@@ -16,9 +16,9 @@ namespace LemonadeStand
         double pricePreference;
         
         //constructor
-        public Customer(Player player, Weather weather, Random rnd)
+        public Customer(Player player, Weather weather, Random rnd, int currentDay)
         {
-            GetChanceToBuy(player, weather, rnd);
+            GetChanceToBuy(player, weather, rnd, currentDay);
         }
 
         //methods
@@ -37,7 +37,7 @@ namespace LemonadeStand
             pricePreference = rnd.NextDouble();
         }
 
-        public void GetChanceToBuy(Player player, Weather weather, Random rnd)
+        public void GetChanceToBuy(Player player, Weather weather, Random rnd, int currentDay)
         {
             SetConditionPreference(rnd);
             SetTemperaturePreference(rnd);
@@ -45,9 +45,8 @@ namespace LemonadeStand
 
             if(player.pricePerCup <= pricePreference && conditionPreference >= weather.randomCondition && temperaturePreference >= weather.actualTemperature)
             {
-                player.SellLemonade();
-                //player.inventory.cashWallet += player.pricePerCup;
-
+                player.SellLemonade(currentDay);
+               
             }  
         }
     }

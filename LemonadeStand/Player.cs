@@ -33,7 +33,7 @@ namespace LemonadeStand
 
         }
 
-        public void SellLemonade()
+        public void SellLemonade(int currentDay)
         {
             if(recipe.cupsLeftInPitcher > 0 && inventory.cupInventory != 0 && inventory.iceInventory >= 4)
             {
@@ -46,18 +46,18 @@ namespace LemonadeStand
             }
             else
             {
-                CheckForPitcherRefill(player);
+                CheckForPitcherRefill(player, currentDay);
                 RefillPitcher();
-                SellLemonade();
+                SellLemonade(currentDay);
             }
         }
 
-        public void CheckForPitcherRefill(Player player)
+        public void CheckForPitcherRefill(Player player, int currentDay)
         {
             if(inventory.lemonInventory < recipe.lemonsPerPitcher || inventory.sugarInventory < recipe.cupsOfSugarPerPitcher)
             {
                 Console.WriteLine("Not enough inventory to make another pitcher! You are sold out for the day... Better planning next time!");
-                EndOfDay(player);
+                days[currentDay].EndOfDay(player);
             }
 
         }
@@ -67,7 +67,7 @@ namespace LemonadeStand
             inventory.sugarInventory -= recipe.cupsOfSugarPerPitcher;
             inventory.lemonInventory -= recipe.lemonsPerPitcher;
             recipe.cupsLeftInPitcher = 10;
-            Console.WriteLine("Your Pitcher has been refilled! Go sell some more Lemonade to thos thirsty customers!");
+            Console.WriteLine("Your Pitcher has been refilled! Go sell some more Lemonade to those thirsty customers!");
         }
     }
 }
