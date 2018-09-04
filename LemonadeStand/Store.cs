@@ -222,7 +222,7 @@ namespace LemonadeStand
             {
                 player.inventory.iceInventory += amount;
                 player.inventory.cashWallet -= price;
-                Console.WriteLine("You bought " + amount + " cups at $" + price);
+                Console.WriteLine("You bought " + amount + " ice cubes at $" + price);
                 player.inventory.DisplayInventoryStatus();
                 ReplenishInventory(player);
             }

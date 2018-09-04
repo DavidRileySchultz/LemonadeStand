@@ -7,21 +7,18 @@ using System.Threading.Tasks;
 namespace LemonadeStand
 {
     class Customer
-        //different type of customers
-        //ability to purchase a cup of lemonade
-        //effected by weather conditions
-        //<list> of customers
+        
     {
 
         //member variable
         int temperaturePreference;
         int conditionPreference;
         double pricePreference;
-        bool buyCup;
+        
         //constructor
-        public Customer()
+        public Customer(Player player, Weather weather, Random rnd)
         {
-
+            GetChanceToBuy(player, weather, rnd);
         }
 
         //methods
@@ -40,18 +37,18 @@ namespace LemonadeStand
             pricePreference = rnd.NextDouble();
         }
 
-        public void SetChanceToBuy(Player player, Weather weather)
+        public void GetChanceToBuy(Player player, Weather weather, Random rnd)
         {
+            SetConditionPreference(rnd);
+            SetTemperaturePreference(rnd);
+            SetPricePreference(rnd);
+
             if(player.pricePerCup <= pricePreference && conditionPreference >= weather.randomCondition && temperaturePreference >= weather.actualTemperature)
             {
-                buyCup = true;
-                player.inventory.cashWallet += player.pricePerCup;
+                player.SellLemonade();
+                //player.inventory.cashWallet += player.pricePerCup;
 
-            }
-            else
-            {
-                buyCup = false;
-            }
+            }  
         }
     }
 }

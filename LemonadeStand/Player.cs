@@ -11,8 +11,11 @@ namespace LemonadeStand
         //member variables
         public Inventory inventory;
         public Recipe recipe;
+        Player player;
+        Day day;
+        public List<Day> days;
         public double pricePerCup = .20;
-        int cupsSold;
+        public int cupsSold;
         //constructor
         public Player()
         {
@@ -32,9 +35,9 @@ namespace LemonadeStand
 
         public void SellLemonade()
         {
-            if(recipe.cupsPerPitcher >= 0 && inventory.cupInventory != 0 && recipe.iceCubesPerCup > inventory.iceInventory)
+            if(recipe.cupsLeftInPitcher > 0 && inventory.cupInventory != 0 && inventory.iceInventory >= 4)
             {
-                recipe.cupsPerPitcher -= 1;
+                recipe.cupsLeftInPitcher -= 1;
                 inventory.cupInventory -= 1;
                 inventory.iceInventory -= recipe.iceCubesPerCup;
                 inventory.cashWallet += pricePerCup;
@@ -43,10 +46,28 @@ namespace LemonadeStand
             }
             else
             {
-                //make method to check if enough ingredients to make another pitcher
-                //make method to refil pitcher
-                //end day if not enough in inventory to refil pitcher
+                CheckForPitcherRefill(player);
+                RefillPitcher();
+                SellLemonade();
             }
+        }
+
+        public void CheckForPitcherRefill(Player player)
+        {
+            if(inventory.lemonInventory < recipe.lemonsPerPitcher || inventory.sugarInventory < recipe.cupsOfSugarPerPitcher)
+            {
+                Console.WriteLine("Not enough inventory to make another pitcher! You are sold out for the day... Better planning next time!");
+                EndOfDay(player);
+            }
+
+        }
+
+        public void RefillPitcher()
+        {
+            inventory.sugarInventory -= recipe.cupsOfSugarPerPitcher;
+            inventory.lemonInventory -= recipe.lemonsPerPitcher;
+            recipe.cupsLeftInPitcher = 10;
+            Console.WriteLine("Your Pitcher has been refilled! Go sell some more Lemonade to thos thirsty customers!");
         }
     }
 }

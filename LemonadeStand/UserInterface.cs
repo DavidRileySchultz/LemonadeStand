@@ -10,3 +10,14 @@ namespace LemonadeStand
     {
     }
 }
+
+
+
+/*numberOfCustomersPerDay = 100;
+            for (int i = 0; i<numberOfCustomersPerDay; i++)
+            {
+
+                customers.Add(new Customer(player, weather, rnd));
+
+            }
+            customers[currentCustomer].GetChanceToBuy(player, weather, rnd);*/

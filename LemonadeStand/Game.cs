@@ -13,6 +13,7 @@ namespace LemonadeStand
         Player player;
         Store store;
         Random rnd;
+        Weather weather;
         public List<Day> days;
         public int numberOfDaysInGame = 7;
 
@@ -40,7 +41,7 @@ namespace LemonadeStand
             Console.WriteLine(rules);
         }
 
- 
+
         public void RunDay(int currentDay)
         {
             days[currentDay].weather.DisplayActualWeather();
@@ -48,13 +49,21 @@ namespace LemonadeStand
             {
                 days[currentDay + 1].weather.DisplayForecast();
             }
+
             player.inventory.DisplayInventoryStatus();
             store.ReplenishInventory(player);
             player.recipe.PromptToChangeRecipe();
             player.SetPricePerCup();
-            //Sell lemonade
+            days[currentDay].CustomersPerDay(player);
+            days[currentDay].EndOfDay(player);
         }
 
+        public void EndGame()
+        {
+            Console.WriteLine("It's the end of the week. You're total for the week is $" + player.inventory.cashWallet + ".");
+            Console.WriteLine("Press any key to exit game. Hope you had fun! Try again to see if you can make more money!");
+            Console.ReadLine();
+        }
         public void PlayGame()
         {
             ShowRules();
@@ -64,7 +73,7 @@ namespace LemonadeStand
                 Console.WriteLine("It is day: " + (i+1));
                 RunDay(i);
             }
-            //do end game stuff
+            EndGame();
         }
 
    

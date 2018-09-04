@@ -9,7 +9,7 @@ namespace LemonadeStand
     class Recipe
     {
         //member variables
-        public int cupsPerPitcher = 10;
+        public int cupsLeftInPitcher = 10;
         public int lemonsPerPitcher = 4;
         public int cupsOfSugarPerPitcher = 4;
         public int iceCubesPerCup = 4;
