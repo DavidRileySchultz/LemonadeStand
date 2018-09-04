@@ -13,13 +13,12 @@ namespace LemonadeStand
         public Recipe recipe;
         Player player;
         Day day;
-        public List<Day> days;
         public double pricePerCup = .20;
         public int cupsSold;
         //constructor
-        public Player(List<Day> days)
+        public Player()
         {
-            this.days = days;
+            
             inventory = new Inventory();
             recipe = new Recipe();
             
@@ -39,6 +38,7 @@ namespace LemonadeStand
         {
             if(recipe.cupsLeftInPitcher > 0 && inventory.cupInventory != 0 && inventory.iceInventory >= 4)
             {
+                Console.WriteLine("Congratulations!!!, you've sold a cup of lemonade!");
                 recipe.cupsLeftInPitcher -= 1;
                 inventory.cupInventory -= 1;
                 inventory.iceInventory -= recipe.iceCubesPerCup;
@@ -48,18 +48,18 @@ namespace LemonadeStand
             }
             else
             {
-                CheckForPitcherRefill(player, currentDay);
+                CheckForPitcherRefill(player);
                 RefillPitcher();
                 SellLemonade(currentDay);
             }
         }
 
-        public void CheckForPitcherRefill(Player player, int currentDay)
+        public void CheckForPitcherRefill(Player player)
         {
             if(inventory.lemonInventory < recipe.lemonsPerPitcher || inventory.sugarInventory < recipe.cupsOfSugarPerPitcher)
             {
                 Console.WriteLine("Not enough inventory to make another pitcher! You are sold out for the day... Better planning next time!\n");
-                days[currentDay].EndOfDay(player);
+                
             }
 
         }

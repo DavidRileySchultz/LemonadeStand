@@ -46,7 +46,7 @@ namespace LemonadeStand
             player.inventory.iceInventory = 0;
             player.recipe.cupsLeftInPitcher = 0;
             player.cupsSold = 0;
-            Console.WriteLine("Hit any key to continue onto the next day!");
+            Console.WriteLine("Hit any key to continue onto the next day!\n");
             Console.ReadKey();
         }
         
