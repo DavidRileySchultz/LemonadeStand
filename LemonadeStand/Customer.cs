@@ -19,6 +19,7 @@ namespace LemonadeStand
         public Customer(Player player, Weather weather, Random rnd, int currentDay)
         {
             GetChanceToBuy(player, weather, rnd, currentDay);
+
         }
 
         //methods

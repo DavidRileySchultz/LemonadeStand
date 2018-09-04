@@ -30,7 +30,16 @@ namespace LemonadeStand
         {
             Console.WriteLine("Currently charging $" + pricePerCup  + " per cup.");
             Console.WriteLine("What would you like to charge per cup?\n");
-            pricePerCup = double.Parse(Console.ReadLine());
+                      
+            try
+            {
+                pricePerCup = double.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Please enter a valid input, number or decimal to declare your price.");
+                SetPricePerCup();
+            }
 
         }
 
@@ -50,7 +59,7 @@ namespace LemonadeStand
             {
                 CheckForPitcherRefill(player);
                 RefillPitcher();
-                SellLemonade(currentDay);
+                
             }
         }
 
@@ -61,7 +70,6 @@ namespace LemonadeStand
                 Console.WriteLine("Not enough inventory to make another pitcher! You are sold out for the day... Better planning next time!\n");
                 //this is one of my methods that fulfills the single responsibility principle, all it is designed to do is check inventory to see if there is available inventory to make a new pitcher.
             }
-
         }
 
         public void RefillPitcher()
