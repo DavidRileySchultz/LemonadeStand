@@ -27,7 +27,7 @@ namespace LemonadeStand
 
         public void PromptToChangeRecipe()
         {
-            Console.WriteLine("Would you like to change your recipe?\n(1) Yes\n(2) No");
+            Console.WriteLine("\nWould you like to change your recipe?\n(1) Yes\n(2) No\n");
             switch(Console.ReadLine())
             {
                 case "1":
@@ -53,7 +53,7 @@ namespace LemonadeStand
 
         public void ChangeLemonAmount()
         {
-            Console.WriteLine("How many Lemons do you want to use per pitcher?\n(1) 2 Lemons\n(2) 4 Lemons\n(3) 6 Lemons\n(4) Exit back to Change Recipe menu.");
+            Console.WriteLine("\nHow many Lemons do you want to use per pitcher?\n(1) 2 Lemons\n(2) 4 Lemons\n(3) 6 Lemons\n(4) Exit back to Change Recipe menu.\n");
             switch(Console.ReadLine())
             {
                 case "1":
@@ -78,7 +78,7 @@ namespace LemonadeStand
 
         public void ChangeSugarAmount()
         {
-            Console.WriteLine("How many cups of sugar do you want to use per pitcher?\n(1) 2 Cups of Sugar\n(2) 4 Cups of Sugar\n(3) 6 Cups of Sugar\n(4) Exit back to Change Recipe menu." );
+            Console.WriteLine("\nHow many cups of sugar do you want to use per pitcher?\n(1) 2 Cups of Sugar\n(2) 4 Cups of Sugar\n(3) 6 Cups of Sugar\n(4) Exit back to Change Recipe menu.\n" );
             switch(Console.ReadLine())
             {
                 case "1":
@@ -102,7 +102,7 @@ namespace LemonadeStand
 
         public void ChangeIceAmount()
         {
-            Console.WriteLine("How many Ice Cubes do you want to use per cup?\n(1) 2 Ice Cubes per pitcher\n(2) 4 Ice Cubes per pitcher\n(3) 6 Ice Cubes per pitcher\n(4) Exit back to the Change Recipe menu.");
+            Console.WriteLine("\nHow many Ice Cubes do you want to use per cup?\n(1) 2 Ice Cubes per pitcher\n(2) 4 Ice Cubes per pitcher\n(3) 6 Ice Cubes per pitcher\n(4) Exit back to the Change Recipe menu.\n");
             switch(Console.ReadLine())
             {
                 case "1":

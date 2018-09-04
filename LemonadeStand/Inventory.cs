@@ -14,7 +14,7 @@ namespace LemonadeStand
         public int lemonInventory;
         public int iceInventory;
         public double cashWallet;
-        //making these variables public to update inventory from store
+        
         //constructor
         public Inventory()
         {
@@ -29,7 +29,7 @@ namespace LemonadeStand
 
         public void DisplayInventoryStatus()
         {
-            Console.WriteLine("Cash = " + cashWallet);
+            Console.WriteLine("Cash = $" + cashWallet);
             Console.WriteLine("Cups = " + cupInventory);
             Console.WriteLine("Sugar = " + sugarInventory);
             Console.WriteLine("Lemons = " + lemonInventory);

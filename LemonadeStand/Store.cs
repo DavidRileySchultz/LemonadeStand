@@ -30,11 +30,11 @@ namespace LemonadeStand
         
         public void ReplenishInventory(Player player)
         {
-            Console.WriteLine("What would you like to buy:\n(1)Cups\n(2)Sugar\n(3)Lemons\n(4)Ice\n(5)Exit shop");
+            Console.WriteLine("\nWhat would you like to buy:\n(1)Cups\n(2)Sugar\n(3)Lemons\n(4)Ice\n(5)Exit shop");
             switch(Console.ReadLine())
             {
                 case "1":
-                    BuyCups(player);//display inventroy before entering each item to purchase?
+                    BuyCups(player);
                     break;
                 case "2":
                     BuyCupsOfSugar(player);
@@ -56,7 +56,7 @@ namespace LemonadeStand
 
         public void BuyCups(Player player)
         {
-            Console.WriteLine("So, you need some Cups? \n(1) 25 Cups at $0.95\n(2) 50 Cups at $1.72\n(3) 100 Cups at $3.07\n(4) Exit back to store");
+            Console.WriteLine("\nSo, you need some Cups? \n(1) 25 Cups at $0.95\n(2) 50 Cups at $1.72\n(3) 100 Cups at $3.07\n(4) Exit back to store");
             double price = 0;
             int amount = 0;
                         
@@ -85,14 +85,14 @@ namespace LemonadeStand
             }
             if(CheckFunds(price, player.inventory.cashWallet) == false)
             {
-                Console.WriteLine("Not enough cash, try buying a smaller amount...");
+                Console.WriteLine("\nNot enough cash, try buying a smaller amount...");
                 BuyCups(player);
             }
             else
             {
                 player.inventory.cupInventory += amount;
                 player.inventory.cashWallet -= price;
-                Console.WriteLine("You bought " + amount + " cups at $" + price);
+                Console.WriteLine("\nYou bought " + amount + " cups at $" + price);
                 player.inventory.DisplayInventoryStatus();
                 ReplenishInventory(player);
             }
@@ -100,7 +100,7 @@ namespace LemonadeStand
 
         public void BuyCupsOfSugar(Player player)
         {
-            Console.WriteLine("You need to buy some Sugar?\n(1) 8 cups of Sugar = $0.60\n(2) 20 cups of Sugar = $1.55\n(3) 48 cups of Sugar = $3.40\n(4) Exit back to store");
+            Console.WriteLine("\nYou need to buy some Sugar?\n(1) 8 cups of Sugar = $0.60\n(2) 20 cups of Sugar = $1.55\n(3) 48 cups of Sugar = $3.40\n(4) Exit back to store");
             double price = 0;
             int amount = 0;
 
@@ -122,20 +122,20 @@ namespace LemonadeStand
                     ReplenishInventory(player);
                     break;
                 default:
-                    Console.WriteLine("please enter valid input, try buying a smaller amount...");
+                    Console.WriteLine("please enter valid input, try again...");
                     BuyCupsOfSugar(player);
                     break;
             }
             if (CheckFunds(price, player.inventory.cashWallet) == false)
             {
-                Console.WriteLine("Not enough cash, try again...");
+                Console.WriteLine("\nNot enough cash, try buying a smaller amount...");
                 BuyCupsOfSugar(player);
             }
             else
             {
                 player.inventory.sugarInventory += amount;
                 player.inventory.cashWallet -= price;
-                Console.WriteLine("You bought " + amount + " Cups of Sugar at $" + price);
+                Console.WriteLine("\nYou bought " + amount + " Cups of Sugar at $" + price);
                 player.inventory.DisplayInventoryStatus();
                 ReplenishInventory(player);
             }
@@ -144,7 +144,7 @@ namespace LemonadeStand
 
         public void BuyLemons(Player player)
         {
-            Console.WriteLine("So, you need to buy some Lemons?\n(1) 10 Lemons = $0.69\n(2) 30 Lemons = $2.32\n(3) 75 Lemons = $4.31\n(4) Exit back to store");
+            Console.WriteLine("\nSo, you need to buy some Lemons?\n(1) 10 Lemons = $0.69\n(2) 30 Lemons = $2.32\n(3) 75 Lemons = $4.31\n(4) Exit back to store");
             double price = 0;
             int amount = 0;
 
@@ -172,14 +172,14 @@ namespace LemonadeStand
             }
             if (CheckFunds(price, player.inventory.cashWallet) == false)
             {
-                Console.WriteLine("Not enough cash, try buying a smaller amount...");
+                Console.WriteLine("\nNot enough cash, try buying a smaller amount...");
                 BuyLemons(player);
             }
             else
             {
                 player.inventory.lemonInventory += amount;
                 player.inventory.cashWallet -= price;
-                Console.WriteLine("You bought " + amount + " Lemons at $" + price);
+                Console.WriteLine("\nYou bought " + amount + " Lemons at $" + price);
                 player.inventory.DisplayInventoryStatus();
                 ReplenishInventory(player);
             }
@@ -187,7 +187,7 @@ namespace LemonadeStand
 
         public void BuyIceCubes(Player player)
         {
-            Console.WriteLine("You need to buy some Ice?\n(1) 100 Ice Cubes = $0.81\n(2) 250 Ice Cubes = $2.10\n(3) 500 Ice Cubes = $3.62\n(4) Exit back to store");
+            Console.WriteLine("\nYou need to buy some Ice?\n(1) 100 Ice Cubes = $0.81\n(2) 250 Ice Cubes = $2.10\n(3) 500 Ice Cubes = $3.62\n(4) Exit back to store");
             double price = 0;
             int amount = 0;
 
@@ -215,14 +215,14 @@ namespace LemonadeStand
             }
             if (CheckFunds(price, player.inventory.cashWallet) == false)
             {
-                Console.WriteLine("Not enough cash, try buying a smaller amount...");
+                Console.WriteLine("\nNot enough cash, try buying a smaller amount...");
                 BuyIceCubes(player);
             }
             else
             {
                 player.inventory.iceInventory += amount;
                 player.inventory.cashWallet -= price;
-                Console.WriteLine("You bought " + amount + " ice cubes at $" + price);
+                Console.WriteLine("\nYou bought " + amount + " ice cubes at $" + price);
                 player.inventory.DisplayInventoryStatus();
                 ReplenishInventory(player);
             }

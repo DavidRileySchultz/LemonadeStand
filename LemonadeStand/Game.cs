@@ -20,19 +20,21 @@ namespace LemonadeStand
         //constructor
         public Game()
         {
+            
             rnd = new Random();
-            rules = "The goal is to make as much money as you can in 7 Days.\nBuy cups, lemons, sugar, and ice cubes; then set your recipe based on the weather and conditions.\nStart with the basic recipe and see if you can do bestter.\nLastly, set your price and sell your lemonade at the stand, try changing the price based on the weather conditions as well.\nSee how much money you can make at the end of 7 days!!";
-            player = new Player();
+            rules = "The goal is to make as much money as you can in 7 Days.\nBuy cups, lemons, sugar, and ice cubes; then set your recipe based on the weather and conditions.\nStart with the basic recipe and see if you can do bestter.\nLastly, set your price and sell your lemonade at the stand, try changing the price based on the weather conditions too!\nSee how much money you can make at the end of 7 days!!\n";
+            player = new Player(days);
             store = new Store();
             days = new List<Day>();
-            
+
             numberOfDaysInGame = 7;
             for (int i = 0; i < numberOfDaysInGame; i++)
             {
-               
+
                 days.Add(new Day(rnd));
-           
+
             }
+
 
         }
         //methods

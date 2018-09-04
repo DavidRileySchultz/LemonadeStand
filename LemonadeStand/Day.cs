@@ -32,7 +32,7 @@ namespace LemonadeStand
 
                 customers.Add(new Customer(player, weather, rnd, currentDay));
                 customers[i].GetChanceToBuy(player, weather, rnd, currentDay);
-                //player.SellLemonade();
+                
             }
         }
         
@@ -42,7 +42,7 @@ namespace LemonadeStand
             Console.WriteLine("You managed to sell " + player.cupsSold + " cups of Lemonade today");
             Console.WriteLine("You managed to make $" + (player.cupsSold * player.pricePerCup) + ".");
             Console.WriteLine("Your profit so far is $" + (player.inventory.cashWallet - 20) + ".");
-            Console.WriteLine("You're ice left over from today has melted... Sorry, but this isn't Antarctica");
+            Console.WriteLine("You're ice left over from today has melted... Sorry, but this isn't Antarctica\n");
             player.inventory.iceInventory = 0;
             player.recipe.cupsLeftInPitcher = 0;
             player.cupsSold = 0;

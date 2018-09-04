@@ -27,12 +27,12 @@ namespace LemonadeStand
         }
         public void DisplayActualWeather()
         {
-            Console.WriteLine("Today's weather is: " + actualTemperature + "°F and " + actualCondition + ".");
+            Console.WriteLine("\nToday's weather is: " + actualTemperature + "°F and " + actualCondition + ".");
         }
 
         public void DisplayForecast()
         {
-            Console.WriteLine("Tomorrow's forecasted weather is: " + forecastedTemperature + "°F and " + forecastedCondition + ".");
+            Console.WriteLine("Tomorrow's forecasted weather is: " + forecastedTemperature + "°F and " + forecastedCondition + ".\n");
         }
 
         public void SetForecastedWeather(Random rnd)

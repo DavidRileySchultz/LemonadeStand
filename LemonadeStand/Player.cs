@@ -17,10 +17,12 @@ namespace LemonadeStand
         public double pricePerCup = .20;
         public int cupsSold;
         //constructor
-        public Player()
+        public Player(List<Day> days)
         {
+            this.days = days;
             inventory = new Inventory();
             recipe = new Recipe();
+            
             
         }
 
@@ -28,7 +30,7 @@ namespace LemonadeStand
         public void SetPricePerCup()
         {
             Console.WriteLine("Currently charging $" + pricePerCup  + " per cup.");
-            Console.WriteLine("What would you like to charge per cup?");
+            Console.WriteLine("What would you like to charge per cup?\n");
             pricePerCup = double.Parse(Console.ReadLine());
 
         }
@@ -56,7 +58,7 @@ namespace LemonadeStand
         {
             if(inventory.lemonInventory < recipe.lemonsPerPitcher || inventory.sugarInventory < recipe.cupsOfSugarPerPitcher)
             {
-                Console.WriteLine("Not enough inventory to make another pitcher! You are sold out for the day... Better planning next time!");
+                Console.WriteLine("Not enough inventory to make another pitcher! You are sold out for the day... Better planning next time!\n");
                 days[currentDay].EndOfDay(player);
             }
 
@@ -67,7 +69,7 @@ namespace LemonadeStand
             inventory.sugarInventory -= recipe.cupsOfSugarPerPitcher;
             inventory.lemonInventory -= recipe.lemonsPerPitcher;
             recipe.cupsLeftInPitcher = 10;
-            Console.WriteLine("Your Pitcher has been refilled! Go sell some more Lemonade to those thirsty customers!");
+            Console.WriteLine("Your Pitcher has been refilled! Go sell some more Lemonade to those thirsty customers!\n");
         }
     }
 }
