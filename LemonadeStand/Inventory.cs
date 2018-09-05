@@ -29,7 +29,7 @@ namespace LemonadeStand
 
         public void DisplayInventoryStatus()
         {
-            Console.WriteLine("Cash = $" + cashWallet);
+            Console.WriteLine("Cash = $" + Math.Round(cashWallet, 2));
             Console.WriteLine("Cups = " + cupInventory);
             Console.WriteLine("Sugar = " + sugarInventory);
             Console.WriteLine("Lemons = " + lemonInventory);

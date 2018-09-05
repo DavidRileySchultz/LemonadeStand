@@ -102,7 +102,7 @@ namespace LemonadeStand
 
         public void ChangeIceAmount()
         {
-            Console.WriteLine("\nHow many Ice Cubes do you want to use per cup?\n(1) 2 Ice Cubes per pitcher\n(2) 4 Ice Cubes per pitcher\n(3) 6 Ice Cubes per pitcher\n(4) Exit back to the Change Recipe menu.\n");
+            Console.WriteLine("\nHow many Ice Cubes do you want to use per cup?\n(1) 2 Ice Cubes per cup\n(2) 4 Ice Cubes per cup\n(3) 6 Ice Cubes per cup\n(4) Exit back to the Change Recipe menu.\n");
             switch(Console.ReadLine())
             {
                 case "1":
